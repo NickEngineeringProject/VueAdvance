@@ -18,7 +18,7 @@ export default {
     },
     props: {
         receivedNews: Boolean,
-        value: Object
+        value: String
     },
     methods: {
         toggle() {

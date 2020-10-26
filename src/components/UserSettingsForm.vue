@@ -7,6 +7,8 @@
             <!--                :value="receiveNewsletter"-->
             <!--                @input="(newValue) => {receiveNewsletter = newValue}"-->
             <toggle-input v-model="receiveNews"/>
+            <span v-if="receiveNews">Согласен</span>
+            <span v-else>Примите соглашение</span>
             <button type="submit">Update Settings</button>
         </section>
         <label>
@@ -26,7 +28,7 @@ export default {
     data() {
         return {
             email: '',
-            receiveNews: true,
+            receiveNews: true
         }
     },
     methods: {
