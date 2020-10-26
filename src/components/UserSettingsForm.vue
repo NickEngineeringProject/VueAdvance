@@ -6,16 +6,15 @@
             <p>Send you occasional news and updates</p>
             <!--                :value="receiveNewsletter"-->
             <!--                @input="(newValue) => {receiveNewsletter = newValue}"-->
-            <toggle-input
-                v-model="receiveNewsletter"
-            />
+            <toggle-input v-model="receiveNews"/>
             <button type="submit">Update Settings</button>
         </section>
         <label>
             <span>Email Address</span>
             <input v-model="email"
                    type="text"
-                   placeholder="example@gmail.com">
+                   placeholder="example@gmail.com"
+            >
         </label>
     </form>
 </template>
@@ -27,14 +26,14 @@ export default {
     data() {
         return {
             email: '',
-            receiveNewsletter: false
+            receiveNews: true,
         }
     },
     methods: {
         submit() {
             console.log('success', {
                 email: this.email,
-                receiveNewsletter: this.receiveNewsletter
+                receiveNews: this.receiveNews
             })
         }
     },
