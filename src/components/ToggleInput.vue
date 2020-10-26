@@ -1,8 +1,7 @@
 <template>
-    <span :aria-checked="value.toString()"
-          @click="toggleNewsletter"
-          @keydown.space.prevent="toggleNewsletter"
-
+    <span :aria-checked="toggled.toString()"
+          @click="toggle"
+          @keydown.space.prevent="toggle"
           role="checkbox" tabindex="0">check
     </span>
 </template>
@@ -10,9 +9,16 @@
 <script>
 export default {
     name: "ToggleInput",
-    data() {
-        return {
-            value: false
+    model: {
+        prop: 'toggled',
+        event: 'toggle'
+    },
+    props: {
+        toggled: Boolean
+    },
+    methods: {
+        toggle() {
+            this.$emit('toggle', !this.toggled)
         }
     }
 }
