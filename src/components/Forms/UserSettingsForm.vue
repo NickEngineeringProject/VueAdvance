@@ -8,7 +8,7 @@
             <!--                @input="(newValue) => {receiveNewsletter = newValue}"-->
             <toggle-input v-model="receiveNews"/>
             <span v-if="receiveNews">Согласен</span>
-            <span v-else>Примите соглашение</span>
+            <span v-else>Отказ</span>
             <button type="submit">Update Settings</button>
         </section>
         <label>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import ToggleInput from '@/components/ToggleInput'
+import ToggleInput from '@/components/Forms/ToggleInput'
 export default {
     name: "UserSettingsForm",
     data() {
