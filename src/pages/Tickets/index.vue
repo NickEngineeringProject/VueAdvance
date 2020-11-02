@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Tickets from "@/components/Tickets";
+import Tickets from "@/components/Booking/Tickets";
 export default {
     name: "index",
     components: {Tickets}

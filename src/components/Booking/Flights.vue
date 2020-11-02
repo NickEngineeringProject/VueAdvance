@@ -1,13 +1,13 @@
 <template>
-    <div>
+    <div class="sections">
         <section class="flight_information">
             <h2>Информация о перелете</h2>
             <ul v-for="(board, i) of boards"
                 :board="board" :key="i"
             >
                 <li class="items">
-                    <label>
-                        <input type="checkbox">
+                    <label class="items__title">
+                        <input type="checkbox" v-model="flightSelection">
                         Номер рейса: {{ board.id }}
                     </label>
                     <span>
@@ -46,6 +46,7 @@
         <section class="booking_information">
             <h2>Информация о бронировании</h2>
             <label>
+                Выбран {{flightSelection}} номер рейса
                 <button type="submit">Забронировать</button>
             </label>
         </section>
@@ -57,7 +58,7 @@ export default {
     name: "Flights",
     data () {
         return {
-            selected: [],
+            flightSelection: [{}],
             boards: [
                 {
                     id: 1,
@@ -79,5 +80,8 @@ export default {
     .items {
         display: flex;
         flex-direction: column;
+    }
+    .items__title {
+        padding-bottom: 1rem;
     }
 </style>

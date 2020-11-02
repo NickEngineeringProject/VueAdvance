@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Flights from "@/components/Flights";
+import Flights from "@/components/Booking/Flights";
 export default {
     name: "index",
     components: {Flights}
