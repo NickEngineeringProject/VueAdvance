@@ -1,12 +1,14 @@
 <template>
     <div>
-        <h2>Купить билет</h2>
+        <Tickets/>
     </div>
 </template>
 
 <script>
+import Tickets from "@/components/Tickets";
 export default {
-    name: "index"
+    name: "index",
+    components: {Tickets}
 }
 </script>
 
