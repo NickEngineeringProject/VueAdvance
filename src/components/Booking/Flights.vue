@@ -7,7 +7,7 @@
             >
                 <li class="items">
                     <label class="items__title">
-                        <input type="checkbox" v-model="flightSelection">
+                        <input type="checkbox" v-model="flightSelection" :value="board.id">
                         Номер рейса: {{ board.id }}
                     </label>
                     <span>
@@ -58,7 +58,7 @@ export default {
     name: "Flights",
     data () {
         return {
-            flightSelection: [{}],
+            flightSelection: [],
             boards: [
                 {
                     id: 1,
@@ -71,6 +71,13 @@ export default {
                     time: 'вылет сегодня в 10:00 приземление в 12:00'
                 }
             ]
+        }
+    },
+    computed: {
+        findId() {
+            return this.boards.filter(() => {
+
+            })
         }
     }
 }
